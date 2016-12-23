@@ -2,6 +2,9 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
+  performance: {
+    hints: false,
+  },
   entry: [
     'react-hot-loader/patch',
     // activate HMR for React
@@ -22,7 +25,7 @@ module.exports = {
     filename: 'bundle.js',
     // the output bundle
 
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
 
     publicPath: '/',
     // necessary for HMR to know where to load the hot update chunks
@@ -36,7 +39,7 @@ module.exports = {
     hot: true,
     // activate hot reloading
 
-    contentBase: path.resolve(__dirname, 'dist'),
+    contentBase: path.resolve(__dirname, 'build'),
     // match the output path
 
     publicPath: '/',

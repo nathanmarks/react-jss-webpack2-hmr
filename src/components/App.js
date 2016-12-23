@@ -1,25 +1,29 @@
-import React, { Component, PropTypes } from 'react';
-import { createStyleSheet } from 'jss-theme-reactor';
+import React, { PropTypes } from 'react';
+import injectSheet from 'react-jss';
+import Button from './Button';
+import Icon from './Icon';
 
-const styleSheet = createStyleSheet('App', () => {
-  return {
-    root: {
-      color: 'blue',
-    },
-  };
-});
+const styles = {
+  button: {
+    color: 'blue',
+  },
+};
 
-export default class App extends Component {
-  static contextTypes = {
-    styleManager: PropTypes.object.isRequired,
-  };
-
-  render() {
-    const classes = this.context.styleManager.render(styleSheet);
-
-    return (
-      <h1 className={classes.root}>Hello World</h1>
-    );
-  }
+function App({ sheet: { classes } }) {
+  return (
+    <div>
+      <Button
+        icon={<Icon />}
+        value="Hello World"
+        className={classes.button}
+      />
+    </div>
+  );
 }
+
+App.propTypes = {
+  sheet: PropTypes.object,
+};
+
+export default injectSheet(styles)(App);
 

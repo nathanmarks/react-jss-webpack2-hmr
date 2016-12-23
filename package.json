@@ -10,9 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jss-theme-reactor": "^0.9.0",
+    "classnames": "^2.2.5",
     "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react-dom": "^15.4.1",
+    "react-jss": "file:///Users/nathan/Code/repos/nathanmarks/react-jss"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
